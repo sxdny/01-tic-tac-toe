@@ -1,32 +1,24 @@
-import './App.css';
+import { Title } from './Title';
+import { Board } from "./Board";
+import './index.css'
 
 const TURNS = {
   X: "X",
   O: 'O'
 }
 
+// posiciones del tablero
 const board = new Array(9).fill(null);
 
 function App() {
 
   return (
-    <main className="board">
-      <h1> Tic Tac Toe</h1>
-      <section className='game'>
-        {
-          board.map((_, index => {
-            return (
-              <div className="cell" key={index}>
-                <span className='cellContent'>
-                  {index}
-                </span>
-              </div>
-            )
-          }))
-        }
-      </section>
-    </main>
+    <>
+      <Title />
+      <Board posiciones={board} />
+    </>
   )
+
 
 }
 
